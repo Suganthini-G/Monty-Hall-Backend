@@ -41,7 +41,7 @@ namespace MontyHallAPI.Repository
                 ChangedDoor = changeDoor,
                 Wins = wins,
                 Losses = simulations - wins,
-                WinPercentage = (double)wins / simulations * 100
+                WinPercentage = simulations > 0 ? (double)wins / simulations * 100 : 0
             };
         }
         private int GetRevealedDoor(int carPosition, int playerChoice, Random random)

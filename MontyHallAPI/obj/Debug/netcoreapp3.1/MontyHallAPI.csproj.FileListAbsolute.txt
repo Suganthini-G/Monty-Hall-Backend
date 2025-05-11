@@ -21,3 +21,4 @@ D:\Assignment\MontyHallAPI\MontyHallAPI\MontyHallAPI\obj\Debug\netcoreapp3.1\sta
 D:\Assignment\MontyHallAPI\MontyHallAPI\MontyHallAPI\obj\Debug\netcoreapp3.1\MontyHallAPI.dll
 D:\Assignment\MontyHallAPI\MontyHallAPI\MontyHallAPI\obj\Debug\netcoreapp3.1\MontyHallAPI.pdb
 D:\Assignment\MontyHallAPI\MontyHallAPI\MontyHallAPI\obj\Debug\netcoreapp3.1\MontyHallAPI.genruntimeconfig.cache
+D:\Assignment\MontyHallAPI\MontyHallAPI\MontyHallAPI\obj\Debug\netcoreapp3.1\MontyHallAPI.sourcelink.json
