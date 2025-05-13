@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MontyHallAPI.IRepository;
+using System;
 
 namespace MontyHallAPI.Controllers
 {
@@ -17,13 +18,20 @@ namespace MontyHallAPI.Controllers
         [HttpGet("simulate")]
         public IActionResult Simulate(int simulations, bool changeDoor)
         {
-            if (simulations <= 0)
+            try
             {
-                return BadRequest("Number of simulations must be greater than zero.");
-            }
+                if (simulations <= 0)
+                {
+                    return BadRequest("Number of simulations must be greater than zero.");
+                }
 
-            var result = _montyHall.Simulation(simulations, changeDoor);
-            return Ok(result);
+                var result = _montyHall.Simulation(simulations, changeDoor);
+                return Ok(result);
+            }
+            catch (Exception ex) 
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

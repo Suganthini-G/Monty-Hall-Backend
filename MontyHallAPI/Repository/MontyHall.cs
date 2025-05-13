@@ -9,40 +9,54 @@ namespace MontyHallAPI.Repository
     {
         public SimulationResult Simulation(int simulations, bool changeDoor)
         {
-            int wins = 0;
-            Random random = new Random();
+            try 
+            { 
+                int wins = 0;
+                Random random = new Random();
 
-            for (int i = 0; i < simulations; i++)
-            {
-                int carPosition = random.Next(3);
-                int initialChoice = random.Next(3);
-
-                int revealedDoor = GetRevealedDoor(carPosition, initialChoice, random);
-
-                int finalChoice;
-                if (changeDoor)
+                for (int i = 0; i < simulations; i++)
                 {
-                    finalChoice = 3 - initialChoice - revealedDoor; 
-                }
-                else
-                {
-                    finalChoice = initialChoice;
+                    int carPosition = random.Next(3);
+                    int initialChoice = random.Next(3);
+
+                    int revealedDoor = GetRevealedDoor(carPosition, initialChoice, random);
+
+                    int finalChoice;
+                    if (changeDoor)
+                    {
+                        finalChoice = 3 - initialChoice - revealedDoor;
+                    }
+                    else
+                    {
+                        finalChoice = initialChoice;
+                    }
+
+                    if (finalChoice == carPosition)
+                    {
+                        wins++;
+                    }
                 }
 
-                if (finalChoice == carPosition)
+                return new SimulationResult
                 {
-                    wins++;
-                }
+                    Simulations = simulations,
+                    ChangedDoor = changeDoor,
+                    Wins = wins,
+                    Losses = simulations - wins,
+                    WinPercentage = simulations > 0 ? (double)wins / simulations * 100 : 0
+                };
             }
-
-            return new SimulationResult
+            catch (Exception ex)
             {
-                Simulations = simulations,
-                ChangedDoor = changeDoor,
-                Wins = wins,
-                Losses = simulations - wins,
-                WinPercentage = simulations > 0 ? (double)wins / simulations * 100 : 0
-            };
+                return new SimulationResult
+                {
+                    Simulations = simulations,
+                    ChangedDoor = changeDoor,
+                    Wins = 0,
+                    Losses = 0,
+                    WinPercentage = 0,
+                };
+            }
         }
         private int GetRevealedDoor(int carPosition, int playerChoice, Random random)
         {

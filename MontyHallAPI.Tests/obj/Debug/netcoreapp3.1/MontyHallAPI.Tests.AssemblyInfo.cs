@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MontyHallAPI.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+639c483314d69b1cf0a1e4dc5770878351e42af7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+babcdabe8871a2f5b87268858c9a100be6713f8b")]
 [assembly: System.Reflection.AssemblyProductAttribute("MontyHallAPI.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MontyHallAPI.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
